@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src="jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <img src="1.png" id="img" alt="pipe">
+    <p id="dir">north</p>
+    <script>
+        function changeAngle(deg)
+        {
+            if(deg == 360 || deg == 0)
+                $("#dir").text("north")
+            else if(deg == 90)
+                $("#dir").text("east")
+            else if(deg == 180)
+                $("#dir").text("south")
+            else if(deg == 270)
+                $("#dir").text("west")
+        }
+        var deg = 0;
+        
+        $("#img").click(function(){
+            if(deg<360)
+            {
+                $(this).css("transform", "rotate("+(deg+=90)+"deg)")
+                changeAngle(deg);
+            }else{
+                deg = 0
+                $(this).css("transform", "rotate("+(deg+=90)+"deg)")
+                changeAngle(deg);
+            }
+        })
+    </script>
+</body>
+</html>
