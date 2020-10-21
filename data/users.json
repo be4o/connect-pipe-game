@@ -1,0 +1,6 @@
+[
+    {"name":"Beshoy", "email":"email@example.com", "password":"123456", "level":1},
+    {"name":"noor", "email":"noor@example.com", "password":"123456", "level":3},
+    {"name":"sally", "email":"sally@example.com", "password":"123456", "level":5},
+    {"name":"ahmed", "email":"ahmed@example.com", "password":"123456", "level":2}
+]
