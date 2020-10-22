@@ -1,6 +1,1 @@
-[
-    {"name":"Beshoy", "email":"email@example.com", "password":"123456", "level":1},
-    {"name":"noor", "email":"noor@example.com", "password":"123456", "level":3},
-    {"name":"sally", "email":"sally@example.com", "password":"123456", "level":5},
-    {"name":"ahmed", "email":"ahmed@example.com", "password":"123456", "level":2}
-]
+[{"name":"Beshoy","email":"beshoy@email.com","password":"123456","level":3},{"name":"noor","email":"noor@email.com","password":"123456","level":3},{"name":"sally","email":"sally@email.com","password":"123456","level":8},{"name":"ahmed","email":"ahmed@email.com","password":"123456","level":2},{"name":"khaled","email":"khaled@email.com","password":"7c4a8d09ca3762af61e59520943dc26494f8941b","level":1}]

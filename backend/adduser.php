@@ -1,22 +1,24 @@
 <?php
-
 if(isset($_POST['submit']))
 {
-    $content = file_get_contents("data.json");
-    $users =  json_decode($content);
-    $user = new stdClass();
-    $user->id = count($users) + 1;
-    $user->name = $_POST['name'];
-    $user->email = $_POST['email'];
-    $user->password = $_POST['password'];
-    // var_dump($user);
-    array_push($users,$user);
+    try{
+        $content = file_get_contents("../data/users.json");
+        $users =  json_decode($content);
+        $user = new stdClass();
+        $user->name = htmlspecialchars( $_POST['name']);
+        $user->email = htmlspecialchars($_POST['email']);
+        $user->password = sha1(htmlspecialchars($_POST['password']));
+        $user->level = 1;
+        array_push($users,$user);
+        
+        $file = fopen("../data/users.json", 'w');
+        fwrite($file, json_encode($users));
+        fclose($file);
+        echo "1";
+    }catch(Exception $e){
+        echo "0";
+    }
     
-    // var_dump(json_encode($users));
-    $file = fopen("data.json", 'w');
-    fwrite($file, json_encode($users));
-    
-    fclose($file);
 }else if(isset($_POST['delete']) && $_POST['delete'] == 'submit')
 {
     $id = htmlspecialchars($_POST['id']);

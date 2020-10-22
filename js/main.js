@@ -15,10 +15,6 @@ function drawGrid(row, col) {
         $("#game-area").append(rowHTML);
     }
 }
-drawGrid(6, 12);
-
-
-// $("#start-up-modal").modal("show")
 class Pipe {
     // var dir = 0;
     #dir;  //private direction
@@ -85,17 +81,48 @@ var levels=[
         new Pipe('2.png', 90, 0, 'col-6-12', 'pipe-20', 1),
         new Pipe('2.png', 270, 1, 'col-4-10', 'pipe-21', 0),
         new Pipe('2.png', 270, 1, 'col-4-11', 'pipe-22', 0),
+    ],
+    [
+        new Pipe('1.png', 0, 0, 'col-1-1', 'pipe-1', 0),
+        new Pipe('2.png', 270, 0, 'col-2-1', 'pipe-2', 1),
+        new Pipe('1.png', 90, 0, 'col-2-2', 'pipe-3', 0),
+        new Pipe('2.png', 270, 0, 'col-2-3', 'pipe-4', 0),
+        new Pipe('1.png', 180, 0, 'col-3-3', 'pipe-5', 0),
+        new Pipe('1.png', 180, 0, 'col-4-3', 'pipe-6', 0),
+        new Pipe('1.png', 180, 0, 'col-5-3', 'pipe-7', 0),
+        new Pipe('2.png', 270, 0, 'col-6-3', 'pipe-8', 1),
+        new Pipe('1.png', 90, 0, 'col-6-4', 'pipe-9', 0),
+        new Pipe('1.png', 90, 0, 'col-6-5', 'pipe-10', 0),
+        new Pipe('2.png', 180, 0, 'col-6-6', 'pipe-11', 1),
+        new Pipe('1.png', 180, 0, 'col-5-6', 'pipe-12', 0),
+        new Pipe('1.png', 180, 0, 'col-4-6', 'pipe-13', 0),
+        new Pipe('2.png', 0, 0, 'col-3-6', 'pipe-14', 1),
+        new Pipe('1.png', 90, 0, 'col-3-7', 'pipe-15', 0),
+        new Pipe('1.png', 90, 0, 'col-3-8', 'pipe-16', 0),
+        new Pipe('2.png', 90, 0, 'col-3-9', 'pipe-17', 1),
+        new Pipe('1.png', 180, 0, 'col-4-9', 'pipe-18', 0),
+        new Pipe('1.png', 180, 0, 'col-5-9', 'pipe-19', 0),
+        new Pipe('2.png', 270, 0, 'col-6-9', 'pipe-20', 1),
+        new Pipe('1.png', 90, 0, 'col-6-10', 'pipe-21', 0),
+        new Pipe('2.png', 180, 0, 'col-6-11', 'pipe-22', 1),
+        new Pipe('1.png', 180, 0, 'col-3-11', 'pipe-23', 0),
+        new Pipe('1.png', 180, 0, 'col-4-11', 'pipe-24', 0),
+        new Pipe('1.png', 180, 0, 'col-5-11', 'pipe-25', 0),
+        new Pipe('2.png', 0, 0, 'col-2-11', 'pipe-26', 1),
+        new Pipe('2.png', 90, 0, 'col-2-12', 'pipe-27', 1),
+        new Pipe('1.png', 180, 0, 'col-3-12', 'pipe-28', 0),
+        new Pipe('1.png', 180, 0, 'col-4-12', 'pipe-29', 0),
+        new Pipe('1.png', 180, 0, 'col-5-12', 'pipe-30', 0),
+        new Pipe('1.png', 180, 0, 'col-6-12', 'pipe-31', 0),
+        new Pipe('1.png', 90, 1, 'col-6-8', 'pipe-32', 0),
+        new Pipe('2.png', 0, 1, 'col-4-7', 'pipe-33', 1),
+        new Pipe('2.png', 0, 1, 'col-5-7', 'pipe-34', 1),
+        new Pipe('2.png', 90, 1, 'col-4-2', 'pipe-35', 1),
+        new Pipe('2.png', 90, 1, 'col-5-2', 'pipe-36', 1),
+        new Pipe('2.png', 0, 1, 'col-4-4', 'pipe-37', 1),
     ]
-]
+];
 
-
-// var pipes = [
-//     new Pipe('1.png', 0, 0, 'col-1-1', 'pipe-1', 0),
-//     new Pipe('2.png', 270, 0, 'col-2-1', 'pipe-2', 1),
-//     new Pipe('2.png', 90, 0, 'col-2-2', 'pipe-3', 1),
-//     new Pipe('1.png', 90, 1, 'col-3-1', 'pipe-4', 0),
-// ]
-var pipes = levels[0];
 function putImage(pipe, index) {
     var imgHTML = `<img  src="images/${pipe.src}" id="${pipe.id}" data-index="${index}" data-ignored="${pipe.ignored}" />`;
     $("#" + pipe.cell).html(imgHTML);
@@ -108,42 +135,69 @@ function putImages(pipes) {
         }
     }
 }
-putImages(pipes);
-
+function resetGrid()
+{
+    $(".cell").html("");
+}
 function checkWin(pipes) {
     if (Array.isArray(pipes)) {
         for (let i = 0; i < pipes.length; i++) {
             if (!pipes[i].checked) return false;
         }
-    }
-
+    }    
     return true;
 }
-
-// create and append begin image
-var beginImage = document.createElement("img")
-beginImage.src = "images/in1.png";
-beginImage.id = "img-begin-game";
-beginImage.style.position = "absolute";
-beginImage.style.left=0;
-beginImage.style.top="-180px";
-beginImage.style.zIndex="-5";
-$("#col-1-1").append(beginImage)
-//create and append end image
-var endImage = document.createElement("img");
-endImage.src = "images/out3.png";
-endImage.id = "img-end-game";
-// endImage.style.position = "absolute";
-// endImage.style.left=0;
-// endImage.style.top="-180px";
-// endImage.style.zIndex="-5";
-$("#col-6-12").append(endImage)
-
-
-
+function createBeginAndEnd()
+{
+    // create and append begin image
+    var beginImage = document.createElement("img")
+    beginImage.src = "images/in1.png";
+    beginImage.id = "img-begin-game";
+    beginImage.style.position = "absolute";
+    beginImage.style.left=0;
+    beginImage.style.top="-180px";
+    beginImage.style.zIndex="-5";
+    $("#col-1-1").append(beginImage)
+    //create and append end image
+    var endImage = document.createElement("img");
+    endImage.src = "images/out3.png";
+    endImage.id = "img-end-game";
+    // endImage.style.position = "absolute";
+    // endImage.style.left=0;
+    // endImage.style.top="-180px";
+    // endImage.style.zIndex="-5";
+    $("#col-6-12").append(endImage)
+}
+var loggedin, level = 0, pipes = levels[0];
+function start()
+{
+    drawGrid(6, 12);
+    $("#start-up-modal").modal("show")
+    loggedin = false;
+    pipes = levels[level];
+    putImages(pipes);
+    createBeginAndEnd();
+    
+}
+function startLevel(level)
+{
+    if(level < levels.length)
+    {
+        // debugger;
+        resetGrid();
+        pipes = levels[level];
+        putImages(pipes);
+        //change level tag
+        $("#level-number").text(parseInt(level) + 1);
+        createBeginAndEnd();
+    }
+    else
+        $("#end-levels").modal("show");
+}
+start();
 
 //on pipe(images) clikced
-$("#game-area img").click(function () {
+$("#game-area").on('click', 'img', function () {
     //get the pipe object related to image that clicked
     var pipe = pipes[parseInt($(this).attr("data-index"))];
     //rotate the image element on the grid
@@ -165,7 +219,22 @@ $("#game-area img").click(function () {
         if (checkWin(pipes)) {
             $("img[data-ignored=1]").fadeOut(1000);
             $("#winner").modal("show")
+            //if there is loggedin user update database (user level)
+            if(loggedin)
+            {
+                $.ajax({
+                    url:'backend/updatelevel.php',
+                    method:"POST",
+                    data:{
+                        email:loggedin.email,
+                        submit:'update-level'
+                    }
+                })
+            }
         }
     }
-})
+});
+$("#btn-next-level").click(function(){
+    startLevel(++level);
+});
 

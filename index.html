@@ -20,7 +20,7 @@
     <div class="container">
         <header class="d-flex bg-success p-3">
 
-            <p class="mr-auto "><i class="fas fa-home"></i> Level 1</p>
+            <p class="mr-auto "> <i class="fas fa-home"></i> Level <span id="level-number">1</span></p>
             <nav>
                 <ul class="mb-0">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-form">
@@ -29,10 +29,13 @@
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#register-form">
                         <i class="fas fa-user-plus"></i> Register
                     </button>
+                    <button type="button" class="btn btn-danger" id="btn-level-up">
+                        level up
+                    </button>
 
                 </ul>
             </nav>
-            <!-- Login Form -->
+            <!-- Login Modal -->
             <div class="modal fade" id="login-form" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
@@ -44,23 +47,23 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <!-- form -->
-                            <form method="POST" action="">
+                            <!-- login form -->
+                            <form method="POST" >
                                 <div class="form-group">
                                     <label for="login-user-email">Email address</label>
-                                    <input type="email" class="form-control" name="login-user-email"
-                                        id="login-user-email">
+                                    <input type="email" class="form-control" name="login-email"
+                                        id="login-email">
                                 </div>
                                 <div class="form-group">
                                     <label for="login-password">Password</label>
-                                    <input type="password" class="form-control" name="login-password"
+                                    <input autocomplete="on" type="password" class="form-control" name="login-password"
                                         id="login-password">
                                 </div>
                                 <div class="form-group form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                    <input type="checkbox" name="rememberme" class="form-check-input" id="remember-me">
+                                    <label class="form-check-label" for="remember-me">Check me out</label>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                                <button name="submit" id="btn-login" class="btn btn-primary btn-block">Login</button>
                             </form>
                         </div>
 
@@ -83,7 +86,7 @@
                             <form>
                                 <div class="form-group">
                                     <label for="user-name">Name</label>
-                                    <input type="email" class="form-control" name="user-name" id="user-name">
+                                    <input type="email" class="form-control" name="register-name" id="register-name">
                                 </div>
                                 <div class="form-group">
                                     <label for="register-email">Email address</label>
@@ -91,15 +94,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="register-password">Password</label>
-                                    <input type="password" class="form-control" name="register-password
+                                    <input autocomplete="on" type="password" class="form-control" name="register-password
                                     register-password" id="register-password">
                                 </div>
                                 <div class="form-group">
-                                    <label for="confirm-password">Password Confirm</label>
-                                    <input type="password" class="form-control" name="confirm-password"
+                                    <label  for="confirm-password">Password Confirm</label>
+                                    <input autocomplete="on" type="password" class="form-control" name="confirm-password"
                                         id="confirm-password">
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                                <button type="submit" id="btn-register" class="btn btn-primary btn-block">Submit</button>
                             </form>
                         </div>
 
@@ -132,7 +135,18 @@
             <div class="modal-content">
 
                 <div class="modal-body">
-                    <button data-dismiss="modal" class="btn btn-info btn-block">you winned</button>
+                    <button data-dismiss="modal" id="btn-next-level" class="btn btn-info btn-block">Next Level</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="end-levels" data-backdrop="static" data-keyboard="false" tabindex="-1" >
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <p>Levels are run out. waiting for more</p>
+                    <button data-dismiss="modal" id="btn-next-level" class="btn btn-info">close</button>
                 </div>
             </div>
         </div>
@@ -142,6 +156,8 @@
 
     <!-- <script src="js/levels.js"></script> -->
     <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/register.js"></script>
 </body>
 
 </html>
