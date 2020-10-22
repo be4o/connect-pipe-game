@@ -18,25 +18,21 @@
 
 <body>
     <div class="container">
-        <header class="d-flex bg-success p-3">
+        <header class="d-flex bg-dark text-light p-3">
 
             <p class="mr-auto "> <i class="fas fa-home"></i> Level <span id="level-number">1</span></p>
             <nav>
                 <ul class="mb-0">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-form">
+                    <button type="button" class="btn btn-outline-primary text-light" data-toggle="modal" data-target="#login-form">
                         <i class="fas fa-user"></i> Login
                     </button>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#register-form">
+                    <button type="button" class="btn btn-outline-primary text-light" data-toggle="modal" data-target="#register-form">
                         <i class="fas fa-user-plus"></i> Register
                     </button>
-                    <button type="button" class="btn btn-danger" id="btn-level-up">
-                        level up
-                    </button>
-
                 </ul>
             </nav>
             <!-- Login Modal -->
-            <div class="modal fade" id="login-form" tabindex="-1" aria-labelledby="exampleModalLabel"
+            <div class="modal fade text-dark" id="login-form" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -53,11 +49,13 @@
                                     <label for="login-user-email">Email address</label>
                                     <input type="email" class="form-control" name="login-email"
                                         id="login-email">
+                                        <span class="error"></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="login-password">Password</label>
                                     <input autocomplete="on" type="password" class="form-control" name="login-password"
                                         id="login-password">
+                                        <span class="error"></span>
                                 </div>
                                 <div class="form-group form-check">
                                     <input type="checkbox" name="rememberme" class="form-check-input" id="remember-me">
@@ -71,7 +69,7 @@
                 </div>
             </div>
             <!-- Register Form -->
-            <div class="modal fade" id="register-form" tabindex="-1" aria-labelledby="exampleModalLabel"
+            <div class="modal fade text-dark" id="register-form" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -111,13 +109,24 @@
             </div>
         </header>
     </div>
-    <div class="continaer" style="margin-top:100px">
-
+    <div class="continaer" style="margin-top:50px">
+        <audio id= "myaudio">
+            <source src="sounds/click.mp3">
+        </audio>
+        <audio id="mywin">
+            <source src="sounds/win.mp3">
+        </audio>
         <div id="game-area">
 
         </div>
+        
+    </div>
+    <div class="container footer bg-dark text-light">
+        <p class="lead text-center mb-0 mt-5 p-3"> copy right &copy; 2020 Team 4 | <span class="text-danger">ITI</span> | supervised by Eng.Mrihan and Eng.Sara </p>
     </div>
 
+
+    <!-- Modals -->
     <div class="modal fade" id="start-up-modal" data-backdrop="static" data-keyboard="false" tabindex="-1" >
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -135,6 +144,7 @@
             <div class="modal-content">
 
                 <div class="modal-body">
+                    <img src="images/level-winner.gif" class="mb-2" width="300" height="300" alt="level winner image">
                     <button data-dismiss="modal" id="btn-next-level" class="btn btn-info btn-block">Next Level</button>
                 </div>
             </div>
@@ -145,8 +155,9 @@
             <div class="modal-content">
 
                 <div class="modal-body">
-                    <p>Levels are run out. waiting for more</p>
-                    <button data-dismiss="modal" id="btn-next-level" class="btn btn-info">close</button>
+                    <img src="images/endlevels.gif" width="300" height="300" alt="levels completed imager">
+                    <p class="text-center mt-1 text-primary">Levels are run out. waiting for more</p>
+                    <button data-dismiss="modal" id="btn-next-level" class="btn btn-info btn-block">close</button>
                 </div>
             </div>
         </div>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Pipes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        header>p {
+            margin: 10px auto 0 0;
+        }
+
+        .col-sm-1 {
+            width: 70px !important;
+            height: 70px !important;
+            flex-grow: 0 !important;
+            flex-shrink: 1 !important;
+            flex-basis: auto !important;
+            padding: 0px !important;
+        }
+
+        @media (min-width:576px) {
+            .col-sm-1 {
+                flex-grow: 0;
+                flex-shrink: 1;
+                flex-basis: auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            /* less than 576px */
+            .col-sm-1 {
+                padding: 0px !important;
+                width: 30px !important;
+                height: 30px !important;
+                flex-grow: 0;
+                flex-shrink: 1;
+                flex-basis: auto;
+            }
+
+            .row {
+                margin: 0px
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .row {
+            justify-content: center;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header class="d-flex bg-success p-3">
+
+            <p class="mr-auto "><i class="fas fa-home"></i> Level </p>
+            <nav>
+                <ul class="mb-0">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-form">
+                        <i class="fas fa-user"></i> Login
+                    </button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#register-form">
+                        <i class="fas fa-user-plus"></i> Register
+                    </button>
+
+                </ul>
+            </nav>
+            <div class="modal fade" id="login-form" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- form -->
+                            <form method="POST" action="">
+                                <div class="form-group">
+                                    <label for="login-user-email">Email address</label>
+                                    <input type="email" class="form-control" name="login-user-email"
+                                        id="login-user-email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="login-password">Password</label>
+                                    <input type="password" class="form-control" name="login-password"
+                                        id="login-password">
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="register-form" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- form -->
+                            <form>
+                                <div class="form-group">
+                                    <label for="user-name">Name</label>
+                                    <input type="email" class="form-control" name="user-name" id="user-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="register-email">Email address</label>
+                                    <input name="register-email" type="email" class="form-control" id="register-email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="register-password">Password</label>
+                                    <input type="password" class="form-control" name="register-password
+                                    register-password" id="register-password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm-password">Password Confirm</label>
+                                    <input type="password" class="form-control" name="confirm-password"
+                                        id="confirm-password">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="continaer mt-3">
+
+        <div id="game-area">
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <button data-dismiss="modal" class="btn btn-info btn-block">Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="winner" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <button data-dismiss="modal" class="btn btn-info btn-block">you winned</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function drawGrid(row, col) {
+            for (let i = 1; i <= row; i++) {
+                var rowHTML = document.createElement("div")
+                rowHTML.id = `row-${i}`;
+                rowHTML.classList = `row`;
+                //draw rows
+                for (let j = 1; j <= col; j++) {
+                    //draw cols
+                    var colHTML = document.createElement("div");
+                    colHTML.id = `col-${i}-${j}`;
+                    colHTML.classList = `cell col-sm-1 border border-dark `;
+                    // colHTML.innerHTML = `<img src='' id="img-${i}-${j}" />`;
+                    rowHTML.appendChild(colHTML);
+                }
+                $("#game-area").append(rowHTML);
+            }
+        }
+        drawGrid(6, 12);
+
+
+        // $("#staticBackdrop").modal("show")
+        class Pipe {
+            // var dir = 0;
+            // #dir;  //private direction
+            // #ignored
+            #directions = [0, 90, 180, 270];
+            constructor(src, dir, ignored,cell, id, type) {
+                this.src = src;
+                this.dir = dir; //true direction of the pipe
+                this.curDir = this.#directions[Math.floor(Math.random() * 4)];
+                this.cell = cell;
+                this.id = id;
+                this.type = type;  //value straight(0) or not-straight(1)
+                this.ignored = ignored;
+                this.checked = this.checkMe();
+            }
+            setId(id) {
+                this.id = id;
+            }
+            rotate() {
+                $("#" + this.id).css("transform", "rotate(" + this.curDir + "deg)")
+            }
+            checkMe() {
+                if(!this.ignored){
+                    if (!this.type) //!this.type that means it is a straight pipe
+                        return this.checked = ((this.dir == 0 || this.dir == 180) && (this.curDir == 0 || this.curDir == 180)) || ((this.dir == 90 || this.dir == 270) && (this.curDir == 90 || this.curDir == 270));
+                    //this means it is not straight
+                    else
+                        return this.checked = this.dir == this.curDir;
+                }else{
+                    return this.checked = true;
+                }
+            }
+        }
+        var pipes = [
+            //pipe('src', 'direction', 'ignored(0,1)', 'cell', 'id', 'type(0,1)')
+            new Pipe('1.png', 0, 0, 'col-1-1', 'pipe-1', 0),
+            new Pipe('1.png', 180, 0, 'col-2-1', 'pipe-2', 0),
+            new Pipe('2.png', 270, 0, 'col-3-1', 'pipe-3', 1),
+            new Pipe('2.png', 90, 0, 'col-3-2', 'pipe-4', 1),
+            new Pipe('2.png', 270, 0, 'col-4-2', 'pipe-5', 1),
+            new Pipe('2.png', 90, 0, 'col-4-3', 'pipe-6', 1),
+            new Pipe('1.png', 180, 0, 'col-5-3', 'pipe-7', 0),
+            new Pipe('2.png', 270, 0, 'col-6-3', 'pipe-8', 1),
+            new Pipe('2.png', 180, 0, 'col-6-4', 'pipe-9', 1),
+            new Pipe('2.png', 0, 0, 'col-5-4', 'pipe-10', 1),
+            new Pipe('1.png',90, 0, 'col-5-5', 'pipe-11', 0),
+            new Pipe('1.png', 90, 0, 'col-5-6', 'pipe-12',0),
+            new Pipe('2.png', 90, 0, 'col-5-7', 'pipe-13', 1),
+            new Pipe('2.png',270,0, 'col-6-7' ,  'pipe-14', 1),
+            new Pipe('1.png',90, 0, 'col-6-8', 'pipe-15', 0),
+            new Pipe('2.png',180, 0, 'col-6-9', 'pipe-16', 1),
+            new Pipe('2.png', 0, 0, 'col-5-9', 'pipe-17',1),
+            new Pipe('1.png', 90, 0, 'col-5-10', 'pipe-18',0),
+            new Pipe('1.png', 90, 0, 'col-5-11', 'pipe-19', 0),
+            new Pipe('2.png', 90, 0, 'col-5-12', 'pipe-20', 1),
+            new Pipe('1.png', 180, 0, 'col-6-12', 'pipe-21', 0),
+        ]
+        
+        function putImage(pipe, index) {
+            var imgHTML = `<img data-cur-dir='${pipe.curDir}' data-dir="${pipe.dir}" data-type="${pipe.type}" data-ignored="${pipe.ignored}" src="images/${pipe.src}"  id="${pipe.id}" data-index="${index}" />`;
+            $("#" + pipe.cell).html(imgHTML);
+            pipe.rotate();
+        }
+        function putImages(pipes) {
+            if (Array.isArray(pipes)) {
+                for (let i = 0; i < pipes.length; i++) {
+                    putImage(pipes[i], i)
+                }
+            }
+        }
+        putImages(pipes);
+
+        function checkWin(pipes) {
+            if (Array.isArray(pipes)) {
+                for (let i = 0; i < pipes.length; i++) {
+                    if (!pipes[i].checked) return false;
+                }
+            }
+            return true;
+        }
+
+
+        //on pipe(images) clikced
+        $("#game-area img").click(function () {
+
+            var pipe = pipes[parseInt($(this).attr("data-index"))]
+            $(this).css("transform", "rotate(" + (pipe.curDir + 90) + "deg)")
+            // $(this).css("transform", "rotate(" + (parseInt($(this).attr('data-cur-dir')) + 90) + "deg)")
+            $(this).attr('data-cur-dir', pipe.curDir + 90)
+
+
+            pipe.curDir += 90;
+            if (pipe.curDir > 270) {
+                pipe.curDir = 0;
+                $(this).attr('data-cur-dir', "0")
+            }
+            pipe.checkMe(); //set value of pipe.checked
+
+            if (checkWin(pipes)) {
+                $("#winner").modal("show")
+            }
+            //   console.log("dir" + pipe.dir)
+            console.log("current dir" + pipe.curDir)
+            console.log(pipe.checked)
+            //if(pipe.checkMe()) console.log("right"); else console.log("not right")
+        })
+    </script>
+</body>
+
+</html>

@@ -8,7 +8,7 @@ if(isset($_POST['submit']))
         $user->name = htmlspecialchars( $_POST['name']);
         $user->email = htmlspecialchars($_POST['email']);
         $user->password = sha1(htmlspecialchars($_POST['password']));
-        $user->level = 1;
+        $user->level = 0;
         array_push($users,$user);
         
         $file = fopen("../data/users.json", 'w');

@@ -1,1 +1,7 @@
-// var startModal = $("#start-up-modal");
+class validate
+{
+    email(id)
+    {
+        
+    }
+}

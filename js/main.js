@@ -56,70 +56,269 @@ class Pipe {
     }
 }
 var levels=[
+    [
+        //pipe('src', 'direction', 'ignored(0,1)', 'cell', 'id', 'type(0,1)')
+        new Pipe('11.png', 0, 0, 'col-1-1', 'pipe-1', 0),
+        new Pipe('11.png', 180, 0, 'col-2-1', 'pipe-2', 0),
+        new Pipe('22.png', 270, 0, 'col-3-1', 'pipe-3', 1),
+        new Pipe('22.png', 90, 0, 'col-3-2', 'pipe-4', 1),
+        new Pipe('22.png', 270, 0, 'col-4-2', 'pipe-5', 1),
+        new Pipe('22.png', 90, 0, 'col-4-3', 'pipe-6', 1),
+        new Pipe('11.png', 180, 0, 'col-5-3', 'pipe-7', 0),
+        new Pipe('22.png', 270, 0, 'col-6-3', 'pipe-8', 1),
+        new Pipe('22.png', 180, 0, 'col-6-4', 'pipe-9', 1),
+        new Pipe('22.png', 0, 0, 'col-5-4', 'pipe-10', 1),
+        new Pipe('11.png',90, 0, 'col-5-5', 'pipe-11', 0),
+        new Pipe('11.png', 90, 0, 'col-5-6', 'pipe-12',0),
+        new Pipe('22.png', 90, 0, 'col-5-7', 'pipe-13', 1),
+        new Pipe('22.png',270,0, 'col-6-7' ,  'pipe-14', 1),
+        new Pipe('11.png',90, 0, 'col-6-8', 'pipe-15', 0),
+        new Pipe('22.png',180, 0, 'col-6-9', 'pipe-16', 1),
+        new Pipe('22.png', 0, 0, 'col-5-9', 'pipe-17',1),
+        new Pipe('11.png', 90, 0, 'col-5-10', 'pipe-18',0),
+        new Pipe('11.png', 90, 0, 'col-5-11', 'pipe-19', 0),
+        new Pipe('22.png', 90, 0, 'col-5-12', 'pipe-20', 1),
+        new Pipe('11.png', 180, 0, 'col-6-12', 'pipe-21', 0),
+    ],
     //level one
     [
         //pipe('src', 'direction', 'ignored(0,1)', 'cell', 'id', 'type(0,1)')
-        new Pipe('1.png', 0, 0, 'col-1-1', 'pipe-1', 0),
-        new Pipe('2.png', 270, 0, 'col-2-1', 'pipe-2', 1),
-        new Pipe('1.png', 90, 0, 'col-2-2', 'pipe-3', 0),
-        new Pipe('1.png', 90, 0, 'col-2-3', 'pipe-4', 0),
-        new Pipe('2.png', 90, 1, 'col-3-3', 'pipe-5', 0),
-        new Pipe('2.png', 90, 1, 'col-4-3', 'pipe-6', 0),
-        new Pipe('2.png', 90, 0, 'col-2-4', 'pipe-7', 1),
-        new Pipe('2.png', 270, 0, 'col-3-4', 'pipe-8', 1),
-        new Pipe('2.png', 90, 0, 'col-3-5', 'pipe-9', 1),
-        new Pipe('2.png', 270, 0, 'col-4-5', 'pipe-10', 1),
-        new Pipe('2.png',270, 1, 'col-5-4', 'pipe-11', 0),
-        new Pipe('1.png', 90, 0, 'col-4-6', 'pipe-12',0),
-        new Pipe('1.png', 90, 0, 'col-4-7', 'pipe-13', 0),
-        new Pipe('2.png',90, 0, 'col-4-8', 'pipe-14', 1),
-        new Pipe('2.png',270, 0, 'col-5-8', 'pipe-15', 1),
-        new Pipe('1.png', 90, 0, 'col-5-9', 'pipe-16',0),
-        new Pipe('1.png', 90, 0, 'col-5-10', 'pipe-17',0),
-        new Pipe('2.png', 90, 0, 'col-5-11', 'pipe-18', 1),
-        new Pipe('2.png', 270, 0, 'col-6-11', 'pipe-19', 1),
-        new Pipe('2.png', 90, 0, 'col-6-12', 'pipe-20', 1),
-        new Pipe('2.png', 270, 1, 'col-4-10', 'pipe-21', 0),
-        new Pipe('2.png', 270, 1, 'col-4-11', 'pipe-22', 0),
+        new Pipe('11.png', 0, 0, 'col-1-1', 'pipe-1', 0),
+        new Pipe('22.png', 270, 0, 'col-2-1', 'pipe-2', 1),
+        new Pipe('11.png', 90, 0, 'col-2-2', 'pipe-3', 0),
+        new Pipe('11.png', 90, 0, 'col-2-3', 'pipe-4', 0),
+        new Pipe('22.png', 90, 1, 'col-3-3', 'pipe-5', 0),
+        new Pipe('22.png', 90, 1, 'col-4-3', 'pipe-6', 0),
+        new Pipe('22.png', 90, 0, 'col-2-4', 'pipe-7', 1),
+        new Pipe('22.png', 270, 0, 'col-3-4', 'pipe-8', 1),
+        new Pipe('22.png', 90, 0, 'col-3-5', 'pipe-9', 1),
+        new Pipe('22.png', 270, 0, 'col-4-5', 'pipe-10', 1),
+        new Pipe('22.png',270, 1, 'col-5-4', 'pipe-11', 0),
+        new Pipe('11.png', 90, 0, 'col-4-6', 'pipe-12',0),
+        new Pipe('11.png', 90, 0, 'col-4-7', 'pipe-13', 0),
+        new Pipe('22.png',90, 0, 'col-4-8', 'pipe-14', 1),
+        new Pipe('22.png',270, 0, 'col-5-8', 'pipe-15', 1),
+        new Pipe('11.png', 90, 0, 'col-5-9', 'pipe-16',0),
+        new Pipe('11.png', 90, 0, 'col-5-10', 'pipe-17',0),
+        new Pipe('22.png', 90, 0, 'col-5-11', 'pipe-18', 1),
+        new Pipe('22.png', 270, 0, 'col-6-11', 'pipe-19', 1),
+        new Pipe('22.png', 90, 0, 'col-6-12', 'pipe-20', 1),
+        new Pipe('22.png', 270, 1, 'col-4-10', 'pipe-21', 0),
+        new Pipe('22.png', 270, 1, 'col-4-11', 'pipe-22', 0),
     ],
+    //level 2
     [
-        new Pipe('1.png', 0, 0, 'col-1-1', 'pipe-1', 0),
-        new Pipe('2.png', 270, 0, 'col-2-1', 'pipe-2', 1),
-        new Pipe('1.png', 90, 0, 'col-2-2', 'pipe-3', 0),
-        new Pipe('2.png', 270, 0, 'col-2-3', 'pipe-4', 0),
-        new Pipe('1.png', 180, 0, 'col-3-3', 'pipe-5', 0),
-        new Pipe('1.png', 180, 0, 'col-4-3', 'pipe-6', 0),
-        new Pipe('1.png', 180, 0, 'col-5-3', 'pipe-7', 0),
-        new Pipe('2.png', 270, 0, 'col-6-3', 'pipe-8', 1),
-        new Pipe('1.png', 90, 0, 'col-6-4', 'pipe-9', 0),
-        new Pipe('1.png', 90, 0, 'col-6-5', 'pipe-10', 0),
-        new Pipe('2.png', 180, 0, 'col-6-6', 'pipe-11', 1),
-        new Pipe('1.png', 180, 0, 'col-5-6', 'pipe-12', 0),
-        new Pipe('1.png', 180, 0, 'col-4-6', 'pipe-13', 0),
-        new Pipe('2.png', 0, 0, 'col-3-6', 'pipe-14', 1),
-        new Pipe('1.png', 90, 0, 'col-3-7', 'pipe-15', 0),
-        new Pipe('1.png', 90, 0, 'col-3-8', 'pipe-16', 0),
-        new Pipe('2.png', 90, 0, 'col-3-9', 'pipe-17', 1),
-        new Pipe('1.png', 180, 0, 'col-4-9', 'pipe-18', 0),
-        new Pipe('1.png', 180, 0, 'col-5-9', 'pipe-19', 0),
-        new Pipe('2.png', 270, 0, 'col-6-9', 'pipe-20', 1),
-        new Pipe('1.png', 90, 0, 'col-6-10', 'pipe-21', 0),
-        new Pipe('2.png', 180, 0, 'col-6-11', 'pipe-22', 1),
-        new Pipe('1.png', 180, 0, 'col-3-11', 'pipe-23', 0),
-        new Pipe('1.png', 180, 0, 'col-4-11', 'pipe-24', 0),
-        new Pipe('1.png', 180, 0, 'col-5-11', 'pipe-25', 0),
-        new Pipe('2.png', 0, 0, 'col-2-11', 'pipe-26', 1),
-        new Pipe('2.png', 90, 0, 'col-2-12', 'pipe-27', 1),
-        new Pipe('1.png', 180, 0, 'col-3-12', 'pipe-28', 0),
-        new Pipe('1.png', 180, 0, 'col-4-12', 'pipe-29', 0),
-        new Pipe('1.png', 180, 0, 'col-5-12', 'pipe-30', 0),
-        new Pipe('1.png', 180, 0, 'col-6-12', 'pipe-31', 0),
-        new Pipe('1.png', 90, 1, 'col-6-8', 'pipe-32', 0),
-        new Pipe('2.png', 0, 1, 'col-4-7', 'pipe-33', 1),
-        new Pipe('2.png', 0, 1, 'col-5-7', 'pipe-34', 1),
-        new Pipe('2.png', 90, 1, 'col-4-2', 'pipe-35', 1),
-        new Pipe('2.png', 90, 1, 'col-5-2', 'pipe-36', 1),
-        new Pipe('2.png', 0, 1, 'col-4-4', 'pipe-37', 1),
+        new Pipe('11.png', 0, 0, 'col-1-1', 'pipe-1', 0),
+        new Pipe('22.png', 270, 0, 'col-2-1', 'pipe-2', 1),
+        new Pipe('11.png', 90, 0, 'col-2-2', 'pipe-3', 0),
+        new Pipe('22.png', 270, 0, 'col-2-3', 'pipe-4', 0),
+        new Pipe('11.png', 180, 0, 'col-3-3', 'pipe-5', 0),
+        new Pipe('11.png', 180, 0, 'col-4-3', 'pipe-6', 0),
+        new Pipe('11.png', 180, 0, 'col-5-3', 'pipe-7', 0),
+        new Pipe('22.png', 270, 0, 'col-6-3', 'pipe-8', 1),
+        new Pipe('11.png', 90, 0, 'col-6-4', 'pipe-9', 0),
+        new Pipe('11.png', 90, 0, 'col-6-5', 'pipe-10', 0),
+        new Pipe('22.png', 180, 0, 'col-6-6', 'pipe-11', 1),
+        new Pipe('11.png', 180, 0, 'col-5-6', 'pipe-12', 0),
+        new Pipe('11.png', 180, 0, 'col-4-6', 'pipe-13', 0),
+        new Pipe('22.png', 0, 0, 'col-3-6', 'pipe-14', 1),
+        new Pipe('11.png', 90, 0, 'col-3-7', 'pipe-15', 0),
+        new Pipe('11.png', 90, 0, 'col-3-8', 'pipe-16', 0),
+        new Pipe('22.png', 90, 0, 'col-3-9', 'pipe-17', 1),
+        new Pipe('11.png', 180, 0, 'col-4-9', 'pipe-18', 0),
+        new Pipe('11.png', 180, 0, 'col-5-9', 'pipe-19', 0),
+        new Pipe('22.png', 270, 0, 'col-6-9', 'pipe-20', 1),
+        new Pipe('11.png', 90, 0, 'col-6-10', 'pipe-21', 0),
+        new Pipe('22.png', 180, 0, 'col-6-11', 'pipe-22', 1),
+        new Pipe('11.png', 180, 0, 'col-3-11', 'pipe-23', 0),
+        new Pipe('11.png', 180, 0, 'col-4-11', 'pipe-24', 0),
+        new Pipe('11.png', 180, 0, 'col-5-11', 'pipe-25', 0),
+        new Pipe('22.png', 0, 0, 'col-2-11', 'pipe-26', 1),
+        new Pipe('22.png', 90, 0, 'col-2-12', 'pipe-27', 1),
+        new Pipe('11.png', 180, 0, 'col-3-12', 'pipe-28', 0),
+        new Pipe('11.png', 180, 0, 'col-4-12', 'pipe-29', 0),
+        new Pipe('11.png', 180, 0, 'col-5-12', 'pipe-30', 0),
+        new Pipe('11.png', 180, 0, 'col-6-12', 'pipe-31', 0),
+        new Pipe('11.png', 90, 1, 'col-6-8', 'pipe-32', 0),
+        new Pipe('22.png', 0, 1, 'col-4-7', 'pipe-33', 1),
+        new Pipe('22.png', 0, 1, 'col-5-7', 'pipe-34', 1),
+        new Pipe('22.png', 90, 1, 'col-4-2', 'pipe-35', 1),
+        new Pipe('22.png', 90, 1, 'col-5-2', 'pipe-36', 1),
+        new Pipe('22.png', 0, 1, 'col-4-4', 'pipe-37', 1),
+    ],
+    //level 3
+    [
+        new Pipe('11.png', 0, 0, 'col-1-1', 'pipe-1', 0),
+        new Pipe('11.png', 0, 0, 'col-2-1', 'pipe-2', 0),
+        new Pipe('11.png', 0, 0, 'col-3-1', 'pipe-3', 0),
+        new Pipe('11.png', 0, 0, 'col-4-1', 'pipe-4', 0),
+        new Pipe('11.png', 0, 0, 'col-5-1', 'pipe-5', 0),
+        new Pipe('22.png', 270, 0, 'col-6-1', 'pipe-6', 1),
+        new Pipe('11.png', 90, 0, 'col-6-2', 'pipe-7', 0),
+        new Pipe('11.png', 90, 0, 'col-6-3', 'pipe-8', 0),
+        new Pipe('11.png', 90, 0, 'col-6-4', 'pipe-9', 0),
+        new Pipe('11.png', 90, 0, 'col-6-5', 'pipe-10', 0),
+        new Pipe('11.png', 90, 0, 'col-6-6', 'pipe-17', 0),
+        new Pipe('22.png', 180, 0, 'col-6-7', 'pipe-11', 1),
+        new Pipe('11.png', 0, 0, 'col-5-7', 'pipe-12', 0),
+        new Pipe('11.png', 0, 0, 'col-4-7', 'pipe-13', 0),
+        new Pipe('11.png', 0, 0, 'col-3-7', 'pipe-14', 0),
+        new Pipe('11.png', 0, 0, 'col-2-7', 'pipe-15', 0),
+        new Pipe('22.png', 0, 0, 'col-1-7', 'pipe-16', 1),
+        new Pipe('11.png', 90, 0, 'col-1-8', 'pipe-15', 0),
+        new Pipe('11.png', 90, 0, 'col-1-9', 'pipe-18', 0),
+        new Pipe('11.png', 90, 0, 'col-1-10', 'pipe-19', 0),
+        new Pipe('11.png', 90, 0, 'col-1-11', 'pipe-20', 0),
+        new Pipe('22.png', 90, 0, 'col-1-12', 'pipe-21', 1),
+        new Pipe('11.png', 0, 0, 'col-2-12', 'pipe-22', 0),
+        new Pipe('11.png', 0, 0, 'col-3-12', 'pipe-23', 0),
+        new Pipe('11.png', 0, 0, 'col-4-12', 'pipe-24', 0),
+        new Pipe('11.png', 0, 0, 'col-5-12', 'pipe-25', 0),
+        new Pipe('11.png', 0, 0, 'col-6-12', 'pipe-26', 0),
+        new Pipe('22.png', 0, 1, 'col-2-2', 'pipe-27', 1),
+        new Pipe('22.png', 90, 1, 'col-3-2', 'pipe-28', 1),
+        new Pipe('22.png', 180, 1, 'col-3-3', 'pipe-29', 1),
+        new Pipe('22.png', 270, 1, 'col-4-3', 'pipe-30', 1),
+        new Pipe('22.png', 270, 1, 'col-4-4', 'pipe-31', 1),
+        new Pipe('22.png', 270, 1, 'col-5-4', 'pipe-32', 1),
+        new Pipe('11.png', 90, 1, 'col-5-5', 'pipe-33', 0),
+        new Pipe('11.png', 0, 1, 'col-5-6', 'pipe-34', 0),
+        new Pipe('22.png', 90, 1, 'col-2-8', 'pipe-35',1),
+        new Pipe('22.png', 180, 1, 'col-3-9', 'pipe-36',1),
+        new Pipe('22.png', 270, 1, 'col-4-9', 'pipe-37',1),
+        new Pipe('22.png', 0, 1, 'col-4-10', 'pipe-38',1),
+        new Pipe('22.png', 180, 1, 'col-5-10', 'pipe-39',1),
+        new Pipe('22.png', 270, 1, 'col-5-11', 'pipe-40',1),
+        new Pipe('22.png', 90, 1, 'col-6-11', 'pipe-41',1),
+    ],
+    // level 4
+    [
+        new Pipe('22.png', 270, 0, 'col-1-1', 'pipe-1', 1),
+        new Pipe('11.png', 90, 0, 'col-1-2', 'pipe-2', 0),
+        new Pipe('11.png', 90, 0, 'col-1-3', 'pipe-3', 0),
+        new Pipe('11.png', 90, 0, 'col-1-4', 'pipe-4', 0),
+        new Pipe('22.png', 90, 0, 'col-1-5', 'pipe-5', 1),
+        new Pipe('22.png', 270, 0, 'col-2-5', 'pipe-6', 1),
+        new Pipe('22.png', 180, 0, 'col-2-6', 'pipe-7', 1),
+        new Pipe('22.png', 0, 0, 'col-1-6', 'pipe-8', 1),
+        new Pipe('11.png', 90, 0, 'col-1-7', 'pipe-9', 0),
+        new Pipe('22.png', 90, 0, 'col-1-8', 'pipe-10', 1),
+        new Pipe('11.png', 0, 0, 'col-2-8', 'pipe-11', 0),
+        new Pipe('11.png', 0, 0, 'col-3-8', 'pipe-12', 0),
+        new Pipe('22.png', 180, 0, 'col-4-8', 'pipe-13', 1),
+        new Pipe('11.png', 90, 0, 'col-4-7', 'pipe-14', 0),
+        new Pipe('22.png', 0, 0, 'col-4-6', 'pipe-15', 1),
+        new Pipe('22.png', 270, 0, 'col-5-6', 'pipe-16', 1),
+        new Pipe('11.png', 90, 0, 'col-5-7', 'pipe-17', 0),
+        new Pipe('11.png', 90, 0, 'col-5-8', 'pipe-18', 0),
+        new Pipe('11.png', 90, 0, 'col-5-9', 'pipe-19', 0),
+        new Pipe('11.png', 90, 0, 'col-5-10', 'pipe-20', 0),
+        new Pipe('22.png', 90, 0, 'col-5-11', 'pipe-21', 1),
+        new Pipe('22.png', 270, 0, 'col-6-11', 'pipe-22', 1),
+        new Pipe('22.png', 90, 0, 'col-6-12', 'pipe-23', 1),
+        new Pipe('11.png', 90, 1, 'col-3-3', 'pipe-24', 0),
+        new Pipe('11.png', 0, 1, 'col-3-4', 'pipe-25', 0),
+        new Pipe('22.png', 90, 1, 'col-3-5', 'pipe-26', 1),
+        new Pipe('22.png', 180, 1, 'col-4-3', 'pipe-27', 1),
+        new Pipe('11.png', 0, 1, 'col-4-4', 'pipe-28', 0),
+        new Pipe('11.png', 90, 1, 'col-4-5', 'pipe-29', 0),
+        new Pipe('22.png', 270, 1, 'col-5-5', 'pipe-25', 1),
+        new Pipe('11.png', 0, 1, 'col-1-9', 'pipe-26', 0),
+        new Pipe('22.png', 0, 1, 'col-2-9', 'pipe-27', 1),
+        new Pipe('11.png', 0, 1, 'col-2-10', 'pipe-28', 0),
+        new Pipe('11.png', 0, 1, 'col-3-10', 'pipe-29', 0),
+        new Pipe('22.png', 270, 1, 'col-4-10', 'pipe-30', 1),
+        new Pipe('11.png', 90, 1, 'col-4-11', 'pipe-31', 0)        
+    ],
+    // level 5
+    [
+        new Pipe('11.png', 0, 0, 'col-1-1', 'pipe-1', 0),
+        new Pipe('11.png', 0, 0, 'col-2-1', 'pipe-2', 0),
+        new Pipe('22.png', 270, 0, 'col-3-1', 'pipe-3', 1),
+        new Pipe('11.png', 90, 0, 'col-3-2', 'pipe-4', 0),
+        new Pipe('11.png', 90, 0, 'col-3-3', 'pipe-7', 0),
+        new Pipe('22.png', 180, 0, 'col-3-4', 'pipe-8', 1),
+        new Pipe('22.png', 0, 0, 'col-2-4', 'pipe-9', 1),
+        new Pipe('11.png', 90, 0, 'col-2-5', 'pipe-10', 0),
+        new Pipe('11.png', 90, 0, 'col-2-6', 'pipe-11', 0),
+        new Pipe('11.png', 90, 0, 'col-2-7', 'pipe-12', 0),
+        new Pipe('22.png', 90, 0, 'col-2-8', 'pipe-19', 1),
+        new Pipe('22.png', 270, 0, 'col-3-8', 'pipe-13', 1),
+        new Pipe('22.png', 90, 0, 'col-3-9', 'pipe-14', 1),
+        new Pipe('22.png', 270, 0, 'col-4-9', 'pipe-15', 1),
+        new Pipe('22.png', 90, 0, 'col-4-10', 'pipe-16', 1),
+        new Pipe('22.png', 270, 0, 'col-5-10', 'pipe-17', 1),
+        new Pipe('22.png', 90, 0, 'col-5-11', 'pipe-18', 1),
+        new Pipe('22.png', 270, 0, 'col-6-11', 'pipe-20', 1),
+        new Pipe('22.png', 90, 0, 'col-6-12', 'pipe-21', 1),
+        new Pipe('11.png', 0, 1, 'col-5-12', 'pipe-22', 0),
+        new Pipe('11.png', 90, 1, 'col-3-10', 'pipe-23', 0),
+        new Pipe('22.png', 90, 1, 'col-2-10', 'pipe-24', 1),
+        new Pipe('11.png', 0, 1, 'col-2-9', 'pipe-25', 0),
+        new Pipe('11.png', 90, 1, 'col-6-9', 'pipe-26', 0),
+        new Pipe('22.png', 270, 1, 'col-6-8', 'pipe-27', 1),
+        new Pipe('11.png', 0, 1, 'col-5-8', 'pipe-28', 0),
+        new Pipe('11.png', 0, 1, 'col-4-8', 'pipe-29', 0),
+        new Pipe('22.png', 0, 1, 'col-4-7', 'pipe-30', 1),
+        new Pipe('11.png', 0, 1, 'col-5-7', 'pipe-31', 0),
+        new Pipe('11.png', 0, 1, 'col-3-6', 'pipe-32', 0),
+        new Pipe('22.png', 180 ,1, 'col-4-6', 'pipe-33', 1),
+        new Pipe('11.png', 90, 1, 'col-5-6', 'pipe-34', 0),
+        new Pipe('11.png', 90, 1, 'col-4-5', 'pipe-35', 0),
+        new Pipe('22.png', 0, 1, 'col-5-5', 'pipe-36', 1),
+        new Pipe('11.png', 0, 1, 'col-6-6', 'pipe-34', 0),
+        new Pipe('22.png', 270, 1, 'col-4-4', 'pipe-35', 1),
+        new Pipe('11.png', 0, 1, 'col-5-4', 'pipe-36', 0),
+        new Pipe('11.png', 0, 1, 'col-6-4', 'pipe-37', 0),
+        new Pipe('22.png', 90, 1, 'col-4-3', 'pipe-38', 1),
+        new Pipe('11.png', 0, 1, 'col-4-2', 'pipe-39', 0),
+        new Pipe('11.png', 0, 1, 'col-4-1', 'pipe-40', 0),
+    ],
+    //level 6
+    [
+        //pipe('src', 'direction', 'ignored(0,1)', 'cell', 'id', 'type(0,1)')
+        // 270 OF ZERO =>(270,90) && 270 OF 1=> (270 ONLY)
+        new Pipe('11.png', 0, 0, 'col-1-1', 'pipe-1', 0),
+        new Pipe('22.png', 270, 0, 'col-2-1', 'pipe-2', 1),
+        new Pipe('11.png', 90, 0, 'col-2-2', 'pipe-3', 0),
+        new Pipe('11.png', 90, 0, 'col-2-3', 'pipe-4', 0),
+        new Pipe('22.png', 90, 0, 'col-2-4', 'pipe-5', 1),
+        new Pipe('22.png', 270, 0, 'col-3-4', 'pipe-6', 1),
+        new Pipe('22.png', 180, 0, 'col-3-5', 'pipe-7', 1),
+        new Pipe('11.png', 180, 0, 'col-2-5', 'pipe-8', 0),
+        new Pipe('22.png', 0, 0, 'col-1-5', 'pipe-9', 1),
+        new Pipe('11.png', 90, 0, 'col-1-6', 'pipe-10', 0),
+        new Pipe('11.png', 90, 0, 'col-1-7', 'pipe-11', 0),
+        new Pipe('22.png', 90, 0, 'col-1-8', 'pipe-12', 1),
+        new Pipe('11.png', 180, 0, 'col-2-8', 'pipe-13', 0),
+        new Pipe('22.png', 180, 0, 'col-3-8', 'pipe-14', 1),
+        new Pipe('22.png', 0, 0, 'col-3-7', 'pipe-15', 1),
+        new Pipe('22.png', 180, 0, 'col-4-7', 'pipe-16', 1),
+        new Pipe('11.png', 90, 0, 'col-1-6', 'pipe-17', 0),
+        new Pipe('11.png', 90, 0, 'col-4-6', 'pipe-18', 0),
+        new Pipe('22.png', 0, 0, 'col-4-5', 'pipe-20', 1),
+        new Pipe('22.png', 270, 0, 'col-5-5', 'pipe-21', 1),
+        new Pipe('11.png', 90, 0, 'col-5-6', 'pipe-22', 0),
+        new Pipe('11.png', 90, 0, 'col-5-7', 'pipe-23', 0),
+        new Pipe('22.png', 90, 0, 'col-5-8', 'pipe-24', 1),
+        new Pipe('22.png', 270, 0, 'col-6-8', 'pipe-25', 1),
+        new Pipe('22.png', 180, 0, 'col-6-9', 'pipe-26', 1),
+        new Pipe('11.png', 180, 0, 'col-5-9', 'pipe-27', 0),
+        new Pipe('11.png', 180, 0, 'col-4-9', 'pipe-28', 0),
+        new Pipe('22.png', 0, 0, 'col-3-9', 'pipe-29', 1),
+        new Pipe('11.png', 90, 0, 'col-3-10', 'pipe-30', 0),
+        new Pipe('11.png', 90, 0, 'col-3-11', 'pipe-31', 0),
+        new Pipe('22.png', 90, 0, 'col-3-12', 'pipe-32', 1),
+        new Pipe('22.png', 180, 0, 'col-4-12', 'pipe-33', 1),
+        new Pipe('22.png', 0, 0, 'col-4-11', 'pipe-34', 1),
+        new Pipe('22.png', 270, 0, 'col-5-11', 'pipe-35', 1),
+        new Pipe('22.png', 90, 0, 'col-5-12', 'pipe-36', 1),
+        new Pipe('11.png', 180, 0, 'col-6-12', 'pipe-37', 0),
+        new Pipe('22.png', 90, 1, 'col-3-2', 'pipe-38', 1),
+        new Pipe('22.png', 90, 1, 'col-4-2', 'pipe-39', 1),
+        new Pipe('11.png', 180, 1, 'col-6-10', 'pipe-40', 1),
+        new Pipe('22.png', 90, 1, 'col-5-4', 'pipe-41', 1),
+        new Pipe('22.png', 90, 1, 'col-6-4', 'pipe-42', 1)
     ]
 ];
 
@@ -151,21 +350,23 @@ function createBeginAndEnd()
 {
     // create and append begin image
     var beginImage = document.createElement("img")
-    beginImage.src = "images/in1.png";
+    beginImage.src = "images/starttap.gif";
     beginImage.id = "img-begin-game";
     beginImage.style.position = "absolute";
     beginImage.style.left=0;
-    beginImage.style.top="-180px";
+    beginImage.style.top = "-228px";
     beginImage.style.zIndex="-5";
     $("#col-1-1").append(beginImage)
+
     //create and append end image
     var endImage = document.createElement("img");
-    endImage.src = "images/out3.png";
+    endImage.src = "images/out.png";
     endImage.id = "img-end-game";
-    // endImage.style.position = "absolute";
-    // endImage.style.left=0;
-    // endImage.style.top="-180px";
-    // endImage.style.zIndex="-5";
+    endImage.style.position = "absolute";
+    endImage.style.left="-2px";
+    endImage.style.top="72px";
+    endImage.style.zIndex="-5";
+    endImage.style.width = "796px";
     $("#col-6-12").append(endImage)
 }
 var loggedin, level = 0, pipes = levels[0];
@@ -198,6 +399,8 @@ start();
 
 //on pipe(images) clikced
 $("#game-area").on('click', 'img', function () {
+    var audio = document.getElementById("myaudio");
+    audio.play()  
     //get the pipe object related to image that clicked
     var pipe = pipes[parseInt($(this).attr("data-index"))];
     //rotate the image element on the grid
@@ -219,6 +422,8 @@ $("#game-area").on('click', 'img', function () {
         if (checkWin(pipes)) {
             $("img[data-ignored=1]").fadeOut(1000);
             $("#winner").modal("show")
+            var win = document.getElementById("mywin");
+            win.play()
             //if there is loggedin user update database (user level)
             if(loggedin)
             {
