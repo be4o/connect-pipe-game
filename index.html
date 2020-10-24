@@ -11,6 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="icon" href="images/11.png">
     
     <!-- My sytles -->
     <link rel="stylesheet" href="css/styles.css">
@@ -20,8 +22,10 @@
     <div class="container">
         <header class="d-flex bg-dark text-light p-3">
 
-            <p class="mr-auto "> <i class="fas fa-home"></i> Level <span id="level-number">1</span></p>
-            <nav>
+            <p class="mr-auto mt-0"> <i class="fas fa-home" style="font-size:30px"></i> <span style="font-family: Montserrat;
+                font-size: 30px;
+                margin-left: 10px;">Level <span id="level-number">1</span></span></p>
+            <nav id="right-nav">
                 <ul class="mb-0">
                     <button type="button" class="btn btn-outline-primary text-light" data-toggle="modal" data-target="#login-form">
                         <i class="fas fa-user"></i> Login
@@ -30,6 +34,7 @@
                         <i class="fas fa-user-plus"></i> Register
                     </button>
                 </ul>
+                
             </nav>
             <!-- Login Modal -->
             <div class="modal fade text-dark" id="login-form" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -48,8 +53,7 @@
                                 <div class="form-group">
                                     <label for="login-user-email">Email address</label>
                                     <input type="email" class="form-control" name="login-email"
-                                        id="login-email">
-                                        <span class="error"></span>
+                                        id="login-email">                                        
                                 </div>
                                 <div class="form-group">
                                     <label for="login-password">Password</label>
@@ -59,7 +63,7 @@
                                 </div>
                                 <div class="form-group form-check">
                                     <input type="checkbox" name="rememberme" class="form-check-input" id="remember-me">
-                                    <label class="form-check-label" for="remember-me">Check me out</label>
+                                    <label class="form-check-label" for="remember-me">Remember me</label>
                                 </div>
                                 <button name="submit" id="btn-login" class="btn btn-primary btn-block">Login</button>
                             </form>
@@ -94,11 +98,13 @@
                                     <label for="register-password">Password</label>
                                     <input autocomplete="on" type="password" class="form-control" name="register-password
                                     register-password" id="register-password">
+                                    <span class="error"></span>
                                 </div>
                                 <div class="form-group">
                                     <label  for="confirm-password">Password Confirm</label>
                                     <input autocomplete="on" type="password" class="form-control" name="confirm-password"
                                         id="confirm-password">
+                                        <span class="error"></span>
                                 </div>
                                 <button type="submit" id="btn-register" class="btn btn-primary btn-block">Submit</button>
                             </form>
@@ -166,6 +172,7 @@
 
 
     <!-- <script src="js/levels.js"></script> -->
+    <script src="js/validation.js"></script>
     <script src="js/main.js"></script>
     <script src="js/login.js"></script>
     <script src="js/register.js"></script>

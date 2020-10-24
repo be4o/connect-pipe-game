@@ -350,7 +350,7 @@ function createBeginAndEnd()
 {
     // create and append begin image
     var beginImage = document.createElement("img")
-    beginImage.src = "images/starttap.gif";
+    beginImage.src = "images/in.png";
     beginImage.id = "img-begin-game";
     beginImage.style.position = "absolute";
     beginImage.style.left=0;
@@ -360,13 +360,13 @@ function createBeginAndEnd()
 
     //create and append end image
     var endImage = document.createElement("img");
-    endImage.src = "images/out.png";
+    endImage.src = "images/in.png";
     endImage.id = "img-end-game";
     endImage.style.position = "absolute";
-    endImage.style.left="-2px";
+    endImage.style.left="0px";
     endImage.style.top="72px";
     endImage.style.zIndex="-5";
-    endImage.style.width = "796px";
+    endImage.style.transform = "rotate(180deg)";
     $("#col-6-12").append(endImage)
 }
 var loggedin, level = 0, pipes = levels[0];
@@ -410,7 +410,7 @@ $("#game-area").on('click', 'img', function () {
     //reset curDir if it exceeds 270 degree
     if (pipe.curDir > 270) {
         //change the value in the object
-        pipe.curDir = 0;       
+        pipe.curDir = 0;
     }
     //set value of pipe.checked true if the current direct after changed is the right direction
     pipe.checkMe();
@@ -442,4 +442,25 @@ $("#game-area").on('click', 'img', function () {
 $("#btn-next-level").click(function(){
     startLevel(++level);
 });
+
+var p = new validation()
+$("#register-name").blur(function(){
+    p.validate("register-name","name","1")
+})
+$("#register-email").blur(function(){
+    p.validate("register-email","email","1")
+})
+$("#register-password").blur(function(){
+    p.validate("register-password","password","1")
+})
+$("#confirm-password").blur(function(){
+    p.validate("confirm-password","confirmPass","register-password")
+})
+$("#login-email").blur(function(){
+    p.validate('login-email', 'email', "1")
+    // console.log("blue email")
+})
+$("#login-password").blur(function(){
+    p.validate('login-password', 'password', "1")
+})
 
