@@ -3,7 +3,7 @@ function storeSessionStorage(name, val) {
     //will die after you close the browser
     sessionStorage.setItem(name, val);
 }
-function storeLocalsStorage(name, val) {
+function storeLocalStorage(name, val) {
     //permenant
     localStorage.setItem(name, val);
 }
@@ -13,7 +13,18 @@ function removeSession(name) {
 function removeLocal(name) {
     localStorage.removeItem(name);
 }
-
+function loginHTML()
+{
+    var dropdownhtml = `<div class="dropdown">
+                    <button class="btn btn-outline-primary text-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i> ${loggedin.name}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <button class="dropdown-item" id="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                    </div>
+                    </div>`;
+    $("#right-nav").html(dropdownhtml);
+}
 $("#btn-login").click(function (event) {
     event.preventDefault()
     //validation
@@ -39,23 +50,19 @@ $("#btn-login").click(function (event) {
                     level = JSON.parse(data).level;
                     startLevel(level);
                     $("#login-form").modal("hide");
-                    if ($("#remember-me").checked) {
+                    if ($("#remember-me").prop( "checked")) {
+                        storeLocalStorage("name", loggedin.name);
                         storeLocalStorage("email", loggedin.email);
                         storeLocalStorage("password", loggedin.password);
+                        storeLocalStorage("level", loggedin.level);
                     } else {
                         storeSessionStorage("password", loggedin.password);
+                        storeSessionStorage("name", loggedin.name);
                         storeSessionStorage("email", loggedin.email);
+                        storeSessionStorage("level", loggedin.level);
                     }
                     // hide login and register button and display user nav
-                    var dropdownhtml = `<div class="dropdown">
-                    <button class="btn btn-outline-primary text-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user"></i> ${loggedin.name}
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <button class="dropdown-item" id="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
-                    </div>
-                    </div>`;
-                    $("#right-nav").html(dropdownhtml);
+                    loginHTML();
                 }
                 else {
                     // console.log("not valid creadentials");

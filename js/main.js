@@ -58,6 +58,55 @@ class Pipe {
 var levels=[
     [
         //pipe('src', 'direction', 'ignored(0,1)', 'cell', 'id', 'type(0,1)')
+        new Pipe('22.png', 270, 0, 'col-1-1', 'pipe-1', 1),
+        new Pipe('22.png', 90, 0, 'col-1-2', 'pipe-2', 1),
+        new Pipe('22.png', 90, 1, 'col-2-1', 'pipe-3', 1),
+        new Pipe('22.png', 270, 0, 'col-2-2', 'pipe-4', 1),
+        new Pipe('11.png', 90, 0, 'col-2-3', 'pipe-5', 0),
+        new Pipe('11.png', 90, 0, 'col-2-4', 'pipe-6', 0),
+        new Pipe('22.png', 90, 0, 'col-2-5', 'pipe-7', 1),
+        new Pipe('22.png', 270, 0, 'col-3-5', 'pipe-8', 1),
+        new Pipe('11.png', 90, 0, 'col-3-6', 'pipe-9', 0),
+        new Pipe('11.png', 90, 0, 'col-3-7', 'pipe-10', 0),
+        new Pipe('22.png', 90, 0, 'col-3-8', 'pipe-11', 1),
+        new Pipe('22.png',270, 0, 'col-4-8', 'pipe-12', 1),
+        new Pipe('11.png', 90, 0, 'col-4-9', 'pipe-13',0),
+        new Pipe('11.png', 90, 0, 'col-4-10', 'pipe-14', 0),
+        new Pipe('22.png',90,0, 'col-4-11' ,  'pipe-15', 1),
+        new Pipe('22.png',270, 0, 'col-5-11', 'pipe-16', 1),
+        new Pipe('22.png',90, 0, 'col-5-12', 'pipe-17', 1),
+        new Pipe('11.png', 180, 0, 'col-6-12', 'pipe-18',0),
+        new Pipe('22.png', 90, 1, 'col-5-2', 'pipe-19',1),
+        new Pipe('22.png', 90, 1, 'col-6-4', 'pipe-20', 1),
+        new Pipe('11.png', 90, 1, 'col-6-9', 'pipe-21', 0),
+        new Pipe('11.png', 0, 1, 'col-6-10', 'pipe-22', 1),
+    ],
+    [
+        new Pipe('22.png', 270, 0, 'col-1-1', 'pipe-1', 1),
+        new Pipe('11.png', 90, 0, 'col-1-2', 'pipe-2', 0),
+        new Pipe('11.png', 90, 0, 'col-1-3', 'pipe-3', 0),
+        new Pipe('22.png', 90, 0, 'col-1-4', 'pipe-4', 1),
+        new Pipe('11.png', 0, 0, 'col-2-4', 'pipe-5', 0),
+        new Pipe('22.png', 90, 1, 'col-2-10', 'pipe-6', 0),
+        new Pipe('11.png', 0, 0, 'col-3-4', 'pipe-7', 0),
+        new Pipe('11.png', 0, 1, 'col-3-9', 'pipe-8', 0),
+        new Pipe('22.png', 270, 0, 'col-4-4', 'pipe-9', 1),
+        new Pipe('11.png', 90, 0, 'col-4-5', 'pipe-10', 0),
+        new Pipe('11.png', 90, 0, 'col-4-6', 'pipe-11', 0),
+        new Pipe('22.png', 90, 0, 'col-4-7', 'pipe-12', 1),
+        new Pipe('22.png', 270, 1, 'col-5-1', 'pipe-13', 0),
+        new Pipe('11.png',0, 0, 'col-5-7', 'pipe-14', 0),
+        new Pipe('22.png', 270, 0, 'col-6-7', 'pipe-15',1),
+        new Pipe('22.png', 180, 0, 'col-6-8', 'pipe-16', 1),
+        new Pipe('22.png',0,0, 'col-5-8' ,  'pipe-17', 1),
+        new Pipe('11.png',90, 0, 'col-5-9', 'pipe-18', 0),
+        new Pipe('11.png',90, 0, 'col-5-10', 'pipe-19', 0),
+        new Pipe('22.png', 90, 0, 'col-5-11', 'pipe-20',1),
+        new Pipe('22.png', 270, 0, 'col-6-11', 'pipe-21',1),
+        new Pipe('22.png', 90, 0, 'col-6-12', 'pipe-22', 1),
+        
+    ],
+    [
         new Pipe('11.png', 0, 0, 'col-1-1', 'pipe-1', 0),
         new Pipe('11.png', 180, 0, 'col-2-1', 'pipe-2', 0),
         new Pipe('22.png', 270, 0, 'col-3-1', 'pipe-3', 1),
@@ -80,9 +129,7 @@ var levels=[
         new Pipe('22.png', 90, 0, 'col-5-12', 'pipe-20', 1),
         new Pipe('11.png', 180, 0, 'col-6-12', 'pipe-21', 0),
     ],
-    //level one
     [
-        //pipe('src', 'direction', 'ignored(0,1)', 'cell', 'id', 'type(0,1)')
         new Pipe('11.png', 0, 0, 'col-1-1', 'pipe-1', 0),
         new Pipe('22.png', 270, 0, 'col-2-1', 'pipe-2', 1),
         new Pipe('11.png', 90, 0, 'col-2-2', 'pipe-3', 0),
@@ -106,7 +153,6 @@ var levels=[
         new Pipe('22.png', 270, 1, 'col-4-10', 'pipe-21', 0),
         new Pipe('22.png', 270, 1, 'col-4-11', 'pipe-22', 0),
     ],
-    //level 2
     [
         new Pipe('11.png', 0, 0, 'col-1-1', 'pipe-1', 0),
         new Pipe('22.png', 270, 0, 'col-2-1', 'pipe-2', 1),
@@ -146,7 +192,6 @@ var levels=[
         new Pipe('22.png', 90, 1, 'col-5-2', 'pipe-36', 1),
         new Pipe('22.png', 0, 1, 'col-4-4', 'pipe-37', 1),
     ],
-    //level 3
     [
         new Pipe('11.png', 0, 0, 'col-1-1', 'pipe-1', 0),
         new Pipe('11.png', 0, 0, 'col-2-1', 'pipe-2', 0),
@@ -191,7 +236,6 @@ var levels=[
         new Pipe('22.png', 270, 1, 'col-5-11', 'pipe-40',1),
         new Pipe('22.png', 90, 1, 'col-6-11', 'pipe-41',1),
     ],
-    // level 4
     [
         new Pipe('22.png', 270, 0, 'col-1-1', 'pipe-1', 1),
         new Pipe('11.png', 90, 0, 'col-1-2', 'pipe-2', 0),
@@ -230,7 +274,6 @@ var levels=[
         new Pipe('22.png', 270, 1, 'col-4-10', 'pipe-30', 1),
         new Pipe('11.png', 90, 1, 'col-4-11', 'pipe-31', 0)        
     ],
-    // level 5
     [
         new Pipe('11.png', 0, 0, 'col-1-1', 'pipe-1', 0),
         new Pipe('11.png', 0, 0, 'col-2-1', 'pipe-2', 0),
@@ -274,10 +317,7 @@ var levels=[
         new Pipe('11.png', 0, 1, 'col-4-2', 'pipe-39', 0),
         new Pipe('11.png', 0, 1, 'col-4-1', 'pipe-40', 0),
     ],
-    //level 6
     [
-        //pipe('src', 'direction', 'ignored(0,1)', 'cell', 'id', 'type(0,1)')
-        // 270 OF ZERO =>(270,90) && 270 OF 1=> (270 ONLY)
         new Pipe('11.png', 0, 0, 'col-1-1', 'pipe-1', 0),
         new Pipe('22.png', 270, 0, 'col-2-1', 'pipe-2', 1),
         new Pipe('11.png', 90, 0, 'col-2-2', 'pipe-3', 0),
@@ -360,26 +400,54 @@ function createBeginAndEnd()
 
     //create and append end image
     var endImage = document.createElement("img");
-    endImage.src = "images/in.png";
+    endImage.src = "images/11.png";
     endImage.id = "img-end-game";
     endImage.style.position = "absolute";
     endImage.style.left="0px";
     endImage.style.top="72px";
     endImage.style.zIndex="-5";
-    endImage.style.transform = "rotate(180deg)";
     $("#col-6-12").append(endImage)
 }
 var loggedin, level = 0, pipes = levels[0];
+
 function start()
 {
     drawGrid(6, 12);
-    $("#start-up-modal").modal("show")
-    loggedin = false;
-    pipes = levels[level];
+    // $("#start-up-modal").modal("show")
+    //if localstorage 
+    if(localStorage["email"] != undefined && localStorage.getItem("email") != "")
+    {
+        loggedin = {
+            email:localStorage['email'],
+            password:localStorage['password'],
+            level:localStorage['level'],
+            name:localStorage['name'],
+        };
+        loginHTML();
+        $("#level-number").text( parseInt(localStorage["level"]) +1);
+        pipes = levels[parseInt(localStorage["level"])];
+    }
+    else if(sessionStorage["email"] != undefined && sessionStorage.getItem("email") != "")
+    {
+        loggedin = {
+            email:sessionStorage['email'],
+            password:sessionStorage['password'],
+            level:sessionStorage['level'],
+            name:sessionStorage['name'],
+        };
+        loginHTML();
+        $("#level-number").text( parseInt(sessionStorage["level"]) +1);
+        pipes = levels[parseInt(sessionStorage["level"])];
+    }
+    else{
+        loggedin = false;
+        pipes = levels[0];
+    }
     putImages(pipes);
+
     createBeginAndEnd();
-    
 }
+
 function startLevel(level)
 {
     if(level < levels.length)
@@ -464,3 +532,4 @@ $("#login-password").blur(function(){
     p.validate('login-password', 'password', "1")
 })
 
+//check if user saved loggedin status
