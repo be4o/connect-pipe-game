@@ -91,8 +91,12 @@ $("#right-nav").on('click', '#btn-logout', function (event) {
     $("#right-nav").html(buttonsHTML);
     removeSession('email')
     removeSession('password')
+    removeSession('level')
+    removeSession('name')
     removeLocal('email')
     removeLocal('password')
+    removeLocal('level')
+    removeLocal('name')
     loggedin = false;
     startLevel(0);
 });

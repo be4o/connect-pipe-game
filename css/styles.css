@@ -46,6 +46,12 @@ header>p {
     .row {
         margin: 0px
     }
+    #img-begin-game{
+        top:-94px;
+    }
+    #img-end-game{
+        top:30px
+    }
 }
 
 img {

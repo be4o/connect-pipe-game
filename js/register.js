@@ -30,13 +30,13 @@ $("#btn-register").click(function(event){
                         if(Notification.permission === 'granted')
                         {
                             var note = new Notification("User Register", {
-                                body:`$("#register-name").val() has been registered successfully`
+                                body:`User has been registered successfully`
                             });
                         }else{
                             Notification.requestPermission().then(function(permission){
                                 if(permission === 'granted'){
                                     var note = new Notification("User Register", {
-                                        body:`$("#register-name").val() has been registered successfully`
+                                        body:`User has been registered successfully`
                                     });
                                 }
                             })
