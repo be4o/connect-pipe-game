@@ -15,45 +15,47 @@ function drawGrid(row, col) {
         $("#game-area").append(rowHTML);
     }
 }
+var directions = [0, 90, 180, 270];
 class Pipe {
     // var dir = 0;
-    #dir;  //private direction
-    #ignored
-    #directions = [0, 90, 180, 270];
-    constructor(src, dir, ignored,cell, id, type) {
+    //#dir;  //private direction
+    //#ignored
+    //#directions = [0, 90, 180, 270];
+    constructor(src, dir, ignored,cell, id, type) {        
         this.src = src;
-        this.#dir = dir; //true direction of the pipe
-        this.curDir = this.#directions[Math.floor(Math.random() * 4)];
+        this.dir = dir; //true direction of the pipe
+        this.curDir = directions[Math.floor(Math.random() * 4)];
         this.cell = cell;
         this.id = id;
         //value straight(0) or not-straight(1)
         this.type = type;  
         //0 for ignored, 1 for not ignored (important) 
-        this.#ignored = ignored; 
+        this.ignored = ignored; 
         this.checked = this.checkMe();
     }
     setId(id) {
         this.id = id;
     }
+
     rotate() {
         $("#" + this.id).css("transform", "rotate(" + this.curDir + "deg)")
     }
     checkMe() {
         //check if the pipe is not ignored
-        if(!this.#ignored){
+        if(!this.ignored){
             if (!this.type) //!this.type that means it is a straight pipe
-                return this.checked = ((this.#dir == 0 || this.#dir == 180) && (this.curDir == 0 || this.curDir == 180)) || ((this.#dir == 90 || this.#dir == 270) && (this.curDir == 90 || this.curDir == 270));
+                return this.checked = ((this.dir == 0 || this.dir == 180) && (this.curDir == 0 || this.curDir == 180)) || ((this.dir == 90 || this.dir == 270) && (this.curDir == 90 || this.curDir == 270));
             //this means it is not straight
             else
-                return this.checked = this.#dir == this.curDir;
+                return this.checked = this.dir == this.curDir;
         }else{
             return this.checked = true;
         }
     }
-    get ignored()
-    {
-        return this.#ignored;
-    }
+    // get ignored()
+    // {
+    //     return this.ignored;
+    // }
 }
 var levels=[
     [
@@ -390,11 +392,11 @@ function createBeginAndEnd()
 {
     // create and append begin image
     var beginImage = document.createElement("img")
-    beginImage.src = "images/in.png";
+    beginImage.src = "images/11.png";
     beginImage.id = "img-begin-game";
     beginImage.style.position = "absolute";
     beginImage.style.left=0;
-    beginImage.style.top = "-228px";
+    beginImage.style.top = "-73px";
     beginImage.style.zIndex="-5";
     $("#col-1-1").append(beginImage)
 

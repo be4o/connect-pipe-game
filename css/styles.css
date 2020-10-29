@@ -23,7 +23,7 @@ header>p {
     padding: 0px !important;
 }
 
-@media (min-width:576px) {
+@media (min-width:578px) {
     .col-sm-1 {
         flex-grow: 0;
         flex-shrink: 1;
@@ -32,25 +32,21 @@ header>p {
 }
 
 @media (max-width: 576px) {
-
     /* less than 576px */
     .col-sm-1 {
         padding: 0px !important;
         width: 30px !important;
         height: 30px !important;
-        flex-grow: 0;
-        flex-shrink: 1;
-        flex-basis: auto;
     }
 
     .row {
         margin: 0px
     }
     #img-begin-game{
-        top:-94px;
+        top:-32px !important;
     }
     #img-end-game{
-        top:30px
+        top:35px !important;
     }
 }
 

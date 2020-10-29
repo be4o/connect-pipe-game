@@ -20,22 +20,31 @@
 
 <body>
     <div class="container">
-        <header class="d-flex bg-dark text-light p-3">
-
-            <p class="my-0 mr-md-auto mt-0"> <i class="fas fa-home" style="font-size:30px"></i> <span style="font-family: Montserrat;
-                font-size: 30px;
-                margin-left: 10px;">Level <span id="level-number">1</span></span></p>
-            <nav id="right-nav">
-                <ul class="mb-0">
-                    <button type="button" class="btn btn-outline-primary text-light" data-toggle="modal" data-target="#login-form">
-                        <i class="fas fa-user"></i> Login
-                    </button>
-                    <button type="button" class="btn btn-outline-primary text-light" data-toggle="modal" data-target="#register-form">
-                        <i class="fas fa-user-plus"></i> Register
-                    </button>
-                </ul>
-                
-            </nav>
+        
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <!-- Navbar content -->
+                <a class="navbar-brand" href="#"><i class="fas fa-home" style="font-size:30px"></i> <span style="font-family: Montserrat;
+                    font-size: 30px;">Level <span id="level-number">1</span></span></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                <div class="collapse navbar-collapse " id="navbarNavDropdown">
+                    <ul id="right-nav" class="navbar-nav ml-lg-auto">                    
+                    <li class="nav-item mr-1 mb-1">
+                        <button type="button" class="btn btn-outline-primary text-light btn-block" data-toggle="modal" data-target="#login-form">
+                            <i class="fas fa-user"></i> Login
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-outline-primary text-light  btn-block" data-toggle="modal" data-target="#register-form">
+                            <i class="fas fa-user-plus"></i> Register
+                        </button>
+                    </li>
+                   
+                    </ul>
+                </div>
+              </nav>           
+       
             <!-- Login Modal -->
             <div class="modal fade text-dark" id="login-form" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
@@ -113,7 +122,7 @@
                     </div>
                 </div>
             </div>
-        </header>
+      
     </div>
     <div class="continaer" style="margin-top:50px">
         <audio id= "myaudio">
