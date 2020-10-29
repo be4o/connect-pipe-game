@@ -80,14 +80,16 @@ $("#btn-login").click(function (event) {
 
 $("#right-nav").on('click', '#btn-logout', function (event) {
     event.preventDefault()
-    var buttonsHTML = `<ul class="mb-0">
-    <button type="button" class="btn btn-outline-primary text-light" data-toggle="modal" data-target="#login-form">
+    var buttonsHTML = `<li class="nav-item mr-1 mb-1">
+    <button type="button" class="btn btn-outline-primary text-light btn-block" data-toggle="modal" data-target="#login-form">
         <i class="fas fa-user"></i> Login
     </button>
-    <button type="button" class="btn btn-outline-primary text-light" data-toggle="modal" data-target="#register-form">
+</li>
+<li class="nav-item">
+    <button type="button" class="btn btn-outline-primary text-light  btn-block" data-toggle="modal" data-target="#register-form">
         <i class="fas fa-user-plus"></i> Register
     </button>
-    </ul>`;
+</li>`;
     $("#right-nav").html(buttonsHTML);
     removeSession('email')
     removeSession('password')
