@@ -1,0 +1,24 @@
+//validation class
+
+function checkLength takes 1 parametar returns true if length greather than 3 (nour)
+
+function check email using regula expression(sally)
+
+function check password return true if length > 8 and contains lower and upper case(ahmed)
+
+//design
+footer 
+header background
+game-area bold border
+first modal()
+win modal()
+add rotate animation
+add click sound <audio> tag (nour)
+add win sound (nour)
+begin and end pipes (ahmed atef)
+levels area below gaming area
+
+//backend
+add  users json file(name, email, password, level)(beshoy PHP,AJAX)
+
+everyone 3 level array
